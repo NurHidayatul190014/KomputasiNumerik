@@ -445,7 +445,7 @@ f'\left( x\right) =\dfrac{f_{1}-f_{0}}{h}
 <span class="n">hampiran_maju</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">])</span><span class="o">/</span><span class="n">h</span>
 
 <span class="c1"># hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih maju untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_maju</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih maju untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_maju</span><span class="p">))</span>
 </code></pre></div>
 
 <h2 id="hampiran_selisih_mundur">Hampiran Selisih Mundur<a class="headerlink" href="#hampiran_selisih_mundur" title="Permanent link">&para;</a></h2>
@@ -488,7 +488,7 @@ f'\left( x\right) =\dfrac{f_{0}-f_{-1}}{h}
 <span class="n">hampiran_mundur</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">h</span>
 
 <span class="c1">#  hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih mundur untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_mundur</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih mundur untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_mundur</span><span class="p">))</span>
 </code></pre></div>
 
 <h2 id="hampiran_seilisih_pusat">Hampiran Seilisih Pusat<a class="headerlink" href="#hampiran_seilisih_pusat" title="Permanent link">&para;</a></h2>
@@ -531,7 +531,7 @@ f'\left( x\right) =\dfrac{f_{1}-f_{-1}}{2h}
 <span class="n">hampiran_pusat</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
 
 <span class="c1">#  hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih pusat untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_pusat</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih pusat untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_pusat</span><span class="p">))</span>
 </code></pre></div>
 
 <h2 id="contoh_soal">Contoh Soal<a class="headerlink" href="#contoh_soal" title="Permanent link">&para;</a></h2>
@@ -615,7 +615,7 @@ Berikut ini adalah code programnya:</p>
 <span class="n">hampiran_pusat</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
 
 <span class="c1">#  hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih pusat untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_pusat</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih pusat untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_pusat</span><span class="p">))</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">masukkan</span> <span class="n">jumlah</span> <span class="n">kolom</span><span class="p">:</span> <span class="mi">7</span>
@@ -635,7 +635,7 @@ Berikut ini adalah code programnya:</p>
 <span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="mf">2.5</span>
 <span class="n">y</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="mf">12.182</span>
 <span class="n">masukkan</span> <span class="n">x</span> <span class="n">yang</span> <span class="n">anda</span> <span class="n">cari</span> <span class="p">(</span><span class="n">kolom</span> <span class="n">dimulai</span> <span class="n">dari</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="n">dst</span><span class="o">.</span><span class="p">)</span> <span class="p">:</span> <span class="mi">2</span>
-<span class="n">hampiran</span> <span class="n">selisih</span> <span class="n">pusat</span> <span class="n">untuk</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">5.4740</span> <span class="n">adalah</span> <span class="mf">5.5100</span>
+<span class="n">hampiran</span> <span class="n">selisih</span> <span class="n">pusat</span> <span class="n">untuk</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.7000</span> <span class="n">adalah</span> <span class="mf">5.5100</span>
 </code></pre></div>
 
 <p>2) Hampiran selisih maju:
@@ -673,7 +673,7 @@ Berikut ini adalah code programnya:</p>
 <span class="n">hampiran_maju</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">])</span><span class="o">/</span><span class="n">h</span>
 
 <span class="c1"># hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih maju untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_maju</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih maju untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_maju</span><span class="p">))</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">masukkan</span> <span class="n">jumlah</span> <span class="n">kolom</span><span class="p">:</span> <span class="mi">7</span>
@@ -693,7 +693,7 @@ Berikut ini adalah code programnya:</p>
 <span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="mf">2.5</span>
 <span class="n">y</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="mf">12.182</span>
 <span class="n">masukkan</span> <span class="n">x</span> <span class="n">yang</span> <span class="n">anda</span> <span class="n">cari</span> <span class="p">(</span><span class="n">kolom</span> <span class="n">dimulai</span> <span class="n">dari</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="n">dst</span><span class="o">.</span><span class="p">)</span> <span class="p">:</span> <span class="mi">0</span>
-<span class="n">hampiran</span> <span class="n">selisih</span> <span class="n">maju</span> <span class="n">untuk</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">3.6690</span> <span class="n">adalah</span> <span class="mf">4.0650</span>
+<span class="n">hampiran</span> <span class="n">selisih</span> <span class="n">maju</span> <span class="n">untuk</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.3000</span> <span class="n">adalah</span> <span class="mf">4.0650</span>
 </code></pre></div>
 
 <p>3) Hampiran selisih mundur:
@@ -732,7 +732,7 @@ Berikut ini adalah code programnya:</p>
 <span class="n">hampiran_mundur</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">h</span>
 
 <span class="c1">#  hasil</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih mundur untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_mundur</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hampiran selisih mundur untuk x = </span><span class="si">%0.4f</span><span class="s2"> adalah </span><span class="si">%0.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">xp</span><span class="p">],</span> <span class="n">hampiran_mundur</span><span class="p">))</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="nv">masukkan</span> <span class="nv">jumlah</span> <span class="nv">kolom</span>: <span class="mi">7</span>
@@ -752,7 +752,7 @@ Berikut ini adalah code programnya:</p>
 <span class="nv">x</span>[<span class="mi">6</span>]<span class="o">=</span><span class="mi">2</span>.<span class="mi">5</span>
 <span class="nv">y</span>[<span class="mi">6</span>]<span class="o">=</span><span class="mi">12</span>.<span class="mi">182</span>
 <span class="nv">masukkan</span> <span class="nv">x</span> <span class="nv">yang</span> <span class="nv">anda</span> <span class="nv">cari</span> <span class="ss">(</span><span class="nv">kolom</span> <span class="nv">dimulai</span> <span class="nv">dari</span> <span class="mi">0</span>,<span class="mi">1</span>,<span class="mi">2</span> <span class="nv">dst</span>.<span class="ss">)</span> : <span class="mi">6</span>
-<span class="nv">hampiran</span> <span class="nv">selisih</span> <span class="nv">mundur</span> <span class="nv">untuk</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">12</span>.<span class="mi">1820</span> <span class="nv">adalah</span> <span class="mi">11</span>.<span class="mi">0400</span>
+<span class="nv">hampiran</span> <span class="nv">selisih</span> <span class="nv">mundur</span> <span class="nv">untuk</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">2</span>.<span class="mi">5000</span> <span class="nv">adalah</span> <span class="mi">11</span>.<span class="mi">0400</span>
 </code></pre></div>
                 
               
