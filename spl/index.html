@@ -298,15 +298,29 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#contoh_soal" class="md-nav__link">
-    Contoh Soal
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode_jacobi" class="md-nav__link">
+    Metode Jacobi
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#metode_gauss_seidel" class="md-nav__link">
+    Metode Gauss Seidel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh_soal" class="md-nav__link">
+    Contoh Soal
+  </a>
   
 </li>
       
@@ -314,6 +328,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diferensial_biasa/" class="md-nav__link">
+        Numerical Solutions of Ordinary Differential equations
+      </a>
     </li>
   
 
@@ -372,15 +401,29 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#contoh_soal" class="md-nav__link">
-    Contoh Soal
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode_jacobi" class="md-nav__link">
+    Metode Jacobi
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#metode_gauss_seidel" class="md-nav__link">
+    Metode Gauss Seidel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh_soal" class="md-nav__link">
+    Contoh Soal
+  </a>
   
 </li>
       
@@ -489,8 +532,118 @@ a_{n1}x_{1}+a_{n2}x_{2}+...+a_{2nn}x_{n} = bn\\
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X</span><span class="si">%d</span><span class="s1"> = </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 </code></pre></div>
 
-<h4 id="contoh_soal">Contoh Soal<a class="headerlink" href="#contoh_soal" title="Permanent link">&para;</a></h4>
-<p>Tentukan nilai x, y dan z dari persamaan dibawah ini !
+<h2 id="metode_jacobi">Metode Jacobi<a class="headerlink" href="#metode_jacobi" title="Permanent link">&para;</a></h2>
+<p>Metode Iterasi Jacobi merupakan metode yang digunakan untuk menyelesaikan permasalahan Persamaan Linier dan sering dijumpai dalam berbagai disiplin ilmu. Metode Iterasi Jacobi merupakan metode tak langsung, yaitu bermula dari suatu hampiran penyelesaian awal dan selanjutnya berusaha memperbaiki hampiran dalam tak berhingga namun langkah konvergen. Metode Jacobi digunakan untuk menyelesaikan persamaan linier berukuran besar dan proporsi koefisien nolnya besar.</p>
+<p>dibawah ini merupakan rumus dari metode jacobi:
+<script type="math/tex; mode=display">
+x_{i}^{\left( k+1\right) }=\left( b_{i}-\sum ^{i-1}_{j=1}a_{ij}x_{j}^{k}-\sum ^{n}_{j=i+1}a_{ij}x_{j}^{k}\right) /aii , k= 1,2,...,n
+</script>
+</p>
+<p>Algoritma Code:</p>
+<ol>
+<li>deifinisikan dahulu persamaanya didalam code</li>
+<li>masukkan toleransi error yang diinginkan </li>
+<li>persamaannya akan diulang </li>
+<li>jika toleransi error dari hasil perulangan mendekati toleransi error yang diinginkan maka program akan berhenti</li>
+</ol>
+<p>Code:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Mendefinisikan persamaan linear yang akan diselesaikan</span>
+<span class="c1"># dengan menggunakan lambda function untuk mempersingkat function</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="mi">17</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">18</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="mi">25</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Toleransi error yg diinginkan</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan toleransi error: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Jacobi Iteration</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Count</span><span class="se">\t</span><span class="s1">x</span><span class="se">\t</span><span class="s1">y</span><span class="se">\t</span><span class="s1">z</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">condition</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="n">f3</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">))</span>
+
+    <span class="n">e1</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="n">e2</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="n">e3</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z0</span> <span class="o">-</span> <span class="n">z1</span><span class="p">)</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">x1</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">y1</span>
+    <span class="n">z0</span> <span class="o">=</span> <span class="n">z1</span>
+
+    <span class="n">condition</span> <span class="o">=</span> <span class="n">e1</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="ow">and</span> <span class="n">e2</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="ow">and</span> <span class="n">e3</span> <span class="o">&gt;</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Solution: x=</span><span class="si">%0.3f</span><span class="s1">, y=</span><span class="si">%0.3f</span><span class="s1"> and z = </span><span class="si">%0.3f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">))</span>
+</code></pre></div>
+
+<h2 id="metode_gauss_seidel">Metode Gauss Seidel<a class="headerlink" href="#metode_gauss_seidel" title="Permanent link">&para;</a></h2>
+<p>Metode Gauss-Seidel merupakan metode yang digunakan untuk menyelesaikan sistem persamaan linear (SPL) berukuran besar dan proporsi koefisien nolnya besar. Metode Gauss-Seidel dikembangkan dari metode iterasi pada solusi persamaan tak linier.</p>
+<p>dibawah ini merupakan rumus dari metode gauss seidel:</p>
+<p>
+<script type="math/tex; mode=display">
+x_{i}^{\left( k+1\right) }=\left( b_{i}-\sum ^{i-1}_{j=1}a_{ij}x_{j}^{k+1}-\sum ^{n}_{j=i+1}a_{ij}x_{j}^{k}\right) /aii , k= 1,2,...,n
+</script>
+Algoritma Code:</p>
+<ol>
+<li>deifinisikan dahulu persamaanya didalam code</li>
+<li>masukkan toleransi error yang diinginkan </li>
+<li>persamaannya akan diulang </li>
+<li>jika toleransi error dari hasil perulangan mendekati toleransi error yang diinginkan maka program akan berhenti</li>
+</ol>
+<p>Code:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Mendefinisikan persamaan linear yang akan diselesaikan</span>
+<span class="c1"># dengan menggunakan lambda function untuk mempersingkat function</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="mi">15</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Toleransi error yg diinginkan</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;masukkan toleransi error: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Gauss Seidel</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Count</span><span class="se">\t</span><span class="s1">x</span><span class="se">\t</span><span class="s1">y</span><span class="se">\t</span><span class="s1">z</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">condition</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="n">f3</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\t</span><span class="si">%0.4f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">))</span>
+
+    <span class="n">e1</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="n">e2</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="n">e3</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z0</span> <span class="o">-</span> <span class="n">z1</span><span class="p">)</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">x1</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">y1</span>
+    <span class="n">z0</span> <span class="o">=</span> <span class="n">z1</span>
+
+    <span class="n">condition</span> <span class="o">=</span> <span class="n">e1</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="ow">and</span> <span class="n">e2</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="ow">and</span> <span class="n">e3</span> <span class="o">&gt;</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Solution: x=</span><span class="si">%0.3f</span><span class="s1">, y=</span><span class="si">%0.3f</span><span class="s1"> and z = </span><span class="si">%0.3f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">))</span>
+</code></pre></div>
+
+<h2 id="contoh_soal">Contoh Soal<a class="headerlink" href="#contoh_soal" title="Permanent link">&para;</a></h2>
+<p>Tentukan nilai x, y dan z dari persamaan dibawah ini menggunakan metode eliminasi gauss !
 <script type="math/tex; mode=display">
 2x+3y-z = 20\\
 3x+2y+z = 20\\
@@ -591,6 +744,21 @@ code: </p>
           </div>
         </a>
       
+      
+        
+        <a href="../diferensial_biasa/" class="md-footer__link md-footer__link--next" aria-label="Next: Numerical Solutions of Ordinary Differential equations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Numerical Solutions of Ordinary Differential equations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
